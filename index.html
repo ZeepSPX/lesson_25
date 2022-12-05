@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Lesson_25</title>
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<section class="page__test">
+				<div class="page__container">
+					<article class="page__type-data">
+						<h3 class="title">DOM</h3>
+						<div class="page__task">
+							1.const elemOne = document.querySelector(`[data-say-hi]`);
+							const one = elemOne.getAttribute(`data-say-hi`);
+							console.log(one);
+						</div>
+						<div class="page__task">
+							2.const textElement = document.getElementsByTagName(`li`)[1];
+							const textElementContent = textElement.textContent;
+							console.log(textElementContent);
+						</div>
+						<div class="page__task"> 3.const elem = document.querySelectorAll(`.like`);
+							console.log(elem); </div>
+						<div class="page__task">
+							4. Нікуди бо ця функція викликає помилку.
+						</div>
+					</article>
+					<article class="page__text-let">
+						<h3 class="title">Прокрутка</h3>
+						<div class="page__task">
+							1. const width = document.documentElement;
+							const mainWidth = width.clientWidth;
+							const windowWidth = window.innerWidth;
+							console.log(windowWidth - mainWidth);
+						</div>
+						<div class="page__task">
+							2. function scrollPage() {
+							window.scrollTo({
+							top: 100,
+							left: 0,
+							behavior: "smooth"
+							});
+							}
+							setTimeout(scrollPage, 1000);
+						</div>
+						<div class="page__task">
+							3. const itemOne = document.querySelector('.title');
+							const itemTwo = document.querySelector('.page__task');
+							const itemThree = document.querySelector(`.page__img`);
+							const getItemCoords = itemOne.getBoundingClientRect();
+							const getItemTwo = itemTwo.getBoundingClientRect();
+							const getItemThree = itemThree.getBoundingClientRect();
+							console.log(getItemCoords);
+							console.log(getItemTwo);
+							console.log(getItemThree);
+						</div>
+					</article>
+					<article class="page__text-let">
+						<h3 class="title">Events</h3>
+						<nav class="menu">
+							<button type="button" class="menu__button">
+								<span>Open Search</span>
+								<span>Closed Search</span>
+							</button>
+							<div hidden class="menu__form-search">
+								<p>Search&#x2193;&#x2193;&#x2193;</p>
+								<input class="menu__search" maxlength="30" type="text">
+								<div class="menu__counter">Words left <span></span></div>
+							</div>
+						</nav>
+					</article>
+					<div data-say-hi="yes"> Hi </div>
+					<ul>
+						<li>Korchi</li>
+						<li>Younchi</li>
+					</ul>
+					<div class="like"></div>
+					<div class="subscribe"></div>
+					<div class="like-subscribe"></div>
+					<ul>
+						<li>1</li>
+						<li>2</li>
+					</ul>
+					<div class="page__container">
+						<img class="page__img" src="img/googlr.jpg" alt="google">
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
